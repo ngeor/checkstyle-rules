@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 ### Miscellaneous Tasks
 
 - Updated ${checkstyle.version} from 9.2.1 to 9.3
+- Update dependency org.apache.maven.plugins:maven-deploy-plugin to v3.0.0-m2
+- Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.9.0
 
 ## [5.0.0] - 2022-01-31
 
