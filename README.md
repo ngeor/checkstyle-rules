@@ -2,12 +2,9 @@
 
 Rules for [checkstyle]. Share rules among projects.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.ngeor/checkstyle-rules.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.ngeor%22%20AND%20a:%22checkstyle-rules%22)
-[![Java CI with Maven](https://github.com/ngeor/checkstyle-rules/actions/workflows/maven.yml/badge.svg)](https://github.com/ngeor/checkstyle-rules/actions/workflows/maven.yml)
-
-**Archived project!**
-This project is **archived** and will be **removed**.
-It has moved [here](https://github.com/ngeor/kamino/tree/master/libs/checkstyle-rules).
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.ngeor/checkstyle-rules.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.github.ngeor/checkstyle-rules)
+[![build](https://github.com/ngeor/checkstyle-rules/actions/workflows/build.yml/badge.svg)](https://github.com/ngeor/checkstyle-rules/actions/workflows/build.yml)
+[![javadoc](https://javadoc.io/badge2/com.github.ngeor/checkstyle-rules/javadoc.svg)](https://javadoc.io/doc/com.github.ngeor/checkstyle-rules)
 
 ## Overview
 
@@ -174,15 +171,11 @@ Allows magic numbers in hash code, field declarations and annotations.
 
 #### ImportOrder
 
-Approximately matches default IntelliJ behavior:
+Matches [Palantir](https://github.com/palantir/palantir-java-format) style:
 
-- All non Java imports in one group, alphabetically sorted
-- One line separator
-- All javax imports in one group, alphabetically sorted
-- One line separator
-- All java imports in one group, alphabetically sorted
-- One line separator
 - All static imports in one group, alphabetically sorted
+- One line separator
+- All non-static imports in one group, alphabetically sorted
 
 ### [Javadoc Comments](https://checkstyle.sourceforge.io/config_javadoc.html)
 
@@ -343,7 +336,7 @@ The file is optional and it needs to be in `checkstyle/suppressions.xml`.
 
 Example file to ignore magic numbers and multiple string literals in unit tests:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suppressions PUBLIC
     "-//Puppy Crawl//DTD Suppressions 1.0//EN"
