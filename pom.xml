@@ -26,16 +26,6 @@
     <tag>HEAD</tag>
     <url>https://github.com/ngeor/checkstyle-rules</url>
   </scm>
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
   <properties>
     <assertj-bom.version>3.27.3</assertj-bom.version>
     <checkstyle.version>10.12.7</checkstyle.version>
@@ -51,7 +41,6 @@
     <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
     <palantir.version>2.39.0</palantir.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sortpom-maven-plugin.version>4.0.0</sortpom-maven-plugin.version>
@@ -135,11 +124,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>${maven-gpg-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>${nexus-staging-maven-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -258,14 +242,14 @@
             </executions>
           </plugin>
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.8.0</version>
             <extensions>true</extensions>
             <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-              <stagingProgressTimeoutMinutes>60</stagingProgressTimeoutMinutes>
+              <autoPublish>true</autoPublish>
+              <publishingServerId>central</publishingServerId>
+              <waitUntil>published</waitUntil>
             </configuration>
           </plugin>
         </plugins>
